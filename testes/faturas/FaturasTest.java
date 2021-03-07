@@ -10,7 +10,7 @@ public class FaturasTest {
 	
 	@BeforeEach
 	public void inicializa() {
-		fatura = new Fatura("10/03/2021", 1240.00, "Douglas");
+		fatura = new Fatura("10/03/2021", 1240.00, "Douglas","PENDENTE");
 	}
 	
 	@Test
@@ -18,7 +18,8 @@ public class FaturasTest {
 		Assertions.assertAll("fatura",
 				() -> assertEquals("01-03-2021", fatura.getDate()),
 				() -> assertTrue(1240.00 == boleto.getValorTotal()),
-				() -> assertEquals("Douglas", fatura.getNome())
+				() -> assertEquals("Douglas", fatura.getNome()),
+				() -> assertEquals("PENDENTE", fatura.getStatus())
 				);
 	}
 	

@@ -10,7 +10,7 @@ Boleto boleto;
 	
 	@BeforeEach
 	public void inicializa() {
-		boleto = new Boleto("1010072020", 237.00);
+		boleto = new Boleto("1010072020", "01-03-2021", 237.00);
 	}
 	
 	@Test
