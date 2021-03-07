@@ -10,13 +10,14 @@ Boleto boleto;
 	
 	@BeforeEach
 	public void inicializa() {
-		boleto = new Boleto("Saldo 1", 237.00);
+		boleto = new Boleto("1010072020", 237.00);
 	}
 	
 	@Test
 	public void testCriaBoleto() {
-		Assertions.assertAll("livro",
-				() -> assertEquals("Saldo 1", boleto.getNome()),
+		Assertions.assertAll("boleto",
+				() -> assertEquals("1010072020", boleto.getCode()),
+				() -> assertEquals("01-03-2021", boleto.getDate()),
 				() -> assertTrue(237.00 == boleto.getValor())						
 				);
 	}
@@ -24,9 +25,10 @@ Boleto boleto;
 	
 	@Test
 	public void assertionComHamcrestMatcher() {
-		assertThat(boleto.getValor(), equalTo(100.00));
-		assertThat(boleto.getNome(), notNullValue());
-		assertThat(boleto.getNome(), containsString("Teste"));
+		assertThat(boleto.getValor(), equalTo(237.00));
+		assertThat(boleto.getDate(), equalTo("01/03/2021"));
+		assertThat(boleto.getCode(), notNullValue());
+		assertThat(boleto.getCode(), containsString("101"));
 		assertThat(boleto, instanceOf(Boleto.class));
 	}
 }
