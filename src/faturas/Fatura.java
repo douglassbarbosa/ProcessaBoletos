@@ -6,7 +6,7 @@ public class Fatura {
 	private String date;
 	private double valorTotal;
 	private String nome;
-	private String status;
+	public String status;
 
 	
 	public Fatura(String date, double valorTotal, String nome, String status) {
