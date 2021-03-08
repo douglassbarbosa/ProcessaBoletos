@@ -1,11 +1,13 @@
 package pagamentos;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import processaboleto.Boleto;
-import processaboleto.Pagamento;
+import boletos.Boleto;
 
 public class PagamentoTest {
 	
@@ -21,9 +23,9 @@ public class PagamentoTest {
 	@Test
 	public void testCriaBoleto() {
 		Assertions.assertAll("pagamento",
-				() -> assertEquals(411.00, boleto.getValorPago()),
-				() -> assertEquals("01-03-2021", boleto.getDataPagamento()),
-				() -> assertTrue("Boleto" == boleto.getTipoPagamento())						
+				() -> assertEquals(411.00, boleto.getValor()),
+				() -> assertEquals("05/03/2021", pagamento.getDataPagamento()),
+				() -> assertTrue("Boleto" == pagamento.getTipoPagamento())						
 				);
 	}
 	
